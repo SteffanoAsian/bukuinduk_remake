@@ -14,7 +14,6 @@ class Login extends CI_Controller
 
     public function action()
     {
-        // ambil data dari form dan masukkan ke variable $data
         $data = $this->input->post();
         $message = "";
 
@@ -24,7 +23,6 @@ class Login extends CI_Controller
 
         $cek = $this->Siswa->read($where);
         if ($cek) {
-            // if (password_verify($data['pass'], $validasi->siswa_password)) {
             if ($data['pass'] = $cek['siswa_password']) {
                 $data_session = array(
                     'user_id' => $cek['siswa_id'],
